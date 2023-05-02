@@ -82,8 +82,8 @@ class preprocessing():
         for i, well in enumerate(dataset["WellNo"].unique()):
             df_well = dataset[dataset["WellNo"] == well]
             df_well_dp = df_well["DailyProduction"].copy(deep=True)
-            if i >= 1:
-                break
+            # if i >= 1:
+            #     break
             df_well.loc[:, self.feature_list] = self.minMax.transform(
                 df_well[self.feature_list].values)
             df_well.loc[:, 'ElapsedProduction'] = df_well.loc[:, 'ElapsedProduction'].round(
