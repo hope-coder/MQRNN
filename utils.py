@@ -85,7 +85,7 @@ class preprocessing():
             # if i >= 1:
             #     break
             df_well.loc[:, self.feature_list] = self.minMax.transform(
-                df_well[self.feature_list].values)
+                df_well.loc[:,self.feature_list].values)
             df_well.loc[:, 'ElapsedProduction'] = df_well.loc[:, 'ElapsedProduction'].round(
                 2)
             if (df_well.shape[0] > self.input_size + self.output_size):
